@@ -69,7 +69,7 @@ $(SDIR)/%.o: $(SDIR)/%.c
 
 #$(SDIR)/%.o: $(SDIR)/%.cpp
 $(SDIR)/streameye.o: $(SDIR)/streameye.c
-	@$(CXX) $(DEPFLAGS) $(subst -std=gnu11,-std=gnu++11, $(CFLAGS)) $(EXTRA_CFLAGS) -o $@ -c $<
+	@$(CXX) $(DEPFLAGS) $(subst -std=gnu11,-std=c++17, $(CFLAGS)) $(EXTRA_CFLAGS) -o $@ -c $<
 	@echo [$(notdir $(CC))] $(notdir $@)
 
 $(TARGET): mmflibs $(COMM_OBJ) $(OBJS) $(ISP_OBJ) $(MW_LIB)/libvenc.a $(MW_LIB)/libsys.a
